@@ -27,9 +27,9 @@ default['wordpress']['version'] = 'latest'
 
 default['wordpress']['db']['name'] = "wordpressdb"
 default['wordpress']['db']['user'] = "wordpressuser"
-default['wordpress']['db']['pass'] = nil
+default['wordpress']['db']['pass'] = "_HuytQ72bjzB0MvPjUos"
 default['wordpress']['db']['prefix'] = 'wp_'
-default['wordpress']['db']['host'] = 'localhost'
+default['wordpress']['db']['host'] = '50.97.167.114'
 
 default['wordpress']['server_aliases'] = [node['fqdn']]
 

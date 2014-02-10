@@ -38,7 +38,8 @@ if is_local_host? db['host']
   user_exists = %<SELECT 1 FROM mysql.user WHERE user = '#{db['user']}';>
   create_db = %<CREATE DATABASE #{db['name']};>
   db_exists = %<SHOW DATABASES LIKE '#{db['name']}';>
-  grant_privileges = %<GRANT ALL PRIVILEGES ON #{db['name']}.* TO #{user}@'%';>
+  grant_privileges = %<GRANT ALL PRIVILEGES ON #{db['name']}.* TO #{user};>
+  grant_privileges = %<GRANT ALL PRIVILEGES ON #{db['name']}.* TO #{db['user']}@'%';>
   privileges_exist = %<SHOW GRANTS FOR for #{user}@'%';>
   flush_privileges = %<FLUSH PRIVILEGES;>
 
