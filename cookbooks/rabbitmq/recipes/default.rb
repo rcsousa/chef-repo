@@ -184,3 +184,19 @@ if node['rabbitmq']['cluster'] && (node['rabbitmq']['erlang_cookie'] != existing
     action :nothing
   end
 end
+
+execute "enable-plugin" do
+  command "rabbitmq-plugins enable rabbitmq_management"
+  action :run
+end
+
+execute "change-guest-password" do
+  command "rabbitmqctl change_password guest teste123"
+  action :run
+end
+
+execute "final-restart" do
+  command "/etc/init.d/rabbitmq-server restart"
+  action :run
+end
+
